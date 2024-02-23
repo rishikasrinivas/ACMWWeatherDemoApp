@@ -5,6 +5,10 @@ import 'package:provider/provider.dart';
 import '../components/my_button.dart';
 import '../components/my_text_field.dart';
 
+/* This class follows very similar logic to LoginPage() with the 
+* only difference being an additional text field
+* Refer to login.dart for comments and explanation
+*/
 class RegPage extends StatefulWidget {
   final void Function()? onTap;
   const RegPage({super.key, this.onTap});
