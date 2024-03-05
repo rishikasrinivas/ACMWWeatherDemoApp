@@ -24,11 +24,18 @@ class _LoginState extends State<LoginPage> {
   //Another Dart Widget that serves as a text box contrtoller keeping track of the text we input
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
-
-  //We'll use this signIn method later but for now let's just have it print something to the console
-  // when called
-  void signIn() async {
-    print("Clicked Login!");
+  // calls firebase authorization to sign in and if successfull returns
+  //user creds else returns and error
+  Future<void> signIn() async {
+    final auth = Provider.of<AuthService>(context, listen: false);
+    try {
+      await auth.signInWithCreds(emailController.text, passwordController.text);
+      print("sign in ");
+    } catch (e) {
+      //show error msg at bottom of screen
+      ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text("sign in login + e.toString()")));
+    }
   }
 
   @override

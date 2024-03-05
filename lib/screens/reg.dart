@@ -21,8 +21,15 @@ class _RegPage extends State<RegPage> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final verifyPasswordController = TextEditingController();
-  void register() async {
-    print("Clicked register!");
+  Future<void> register() async {
+    final auth = Provider.of<AuthService>(context, listen: false);
+    try {
+      await auth.signUpWithCreds(emailController.text, passwordController.text);
+    } catch (e) {
+      //show error msg at bottom of screen
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text(e.toString())));
+    }
   }
 
   @override
