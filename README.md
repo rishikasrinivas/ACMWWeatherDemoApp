@@ -10,4 +10,5 @@ Instructions to load onto your machine
     - If you run this program would should see
 
 
-<img width="525" alt="Screenshot 2024-02-23 at 10 03 37 AM" src="https://github.com/rishikasrinivas/ACMWWeatherDemoApp/assets/118067369/0c821ad1-de0f-4e24-83c5-0cd94d5ede73">
+2/28
+    - Built Authentication Gate and connected to databse
