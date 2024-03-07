@@ -1,16 +1,28 @@
 import 'package:acmw_weather_demo/screens/login.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_core/firebase_core.dart';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:acmw_weather_demo/screens/reg.dart';
 import 'package:acmw_weather_demo/services/auth/auth_gate.dart';
+import 'package:acmw_weather_demo/services/auth/auth_services.dart';
+import 'package:acmw_weather_demo/services/login_or_reg.dart';
+import 'package:acmw_weather_demo/screens/login.dart';
 import 'package:acmw_weather_demo/firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
+
 // Like our main function in other lanugages. Initizlizes widgets then runs the App class
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  runApp(const App());
+  await Firebase.initializeApp(
+  );
+
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => AuthService(),
+      child: const App(),
+    ),
+  );
 }
 
 class App extends StatelessWidget {

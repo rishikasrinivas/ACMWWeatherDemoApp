@@ -82,6 +82,7 @@ class _Searches extends State<SearchPage> {
       'state': state,
     });
   }
+  
 
   Widget _buildUserList() {
     return StreamBuilder<QuerySnapshot>(
@@ -114,8 +115,6 @@ class _Searches extends State<SearchPage> {
 
     return ListTile(
       title: Text(data['city']),
-      //when u click on an id open a chatpage page
-      //which holds your convo with that id
       onTap: () {
         Navigator.push(
             context,

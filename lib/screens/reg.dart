@@ -1,10 +1,11 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 
 import '../components/my_button.dart';
 import '../components/my_text_field.dart';
-
+import '../services/auth/auth_services.dart';
 /* This class follows very similar logic to LoginPage() with the 
 * only difference being an additional text field
 * Refer to login.dart for comments and explanation
